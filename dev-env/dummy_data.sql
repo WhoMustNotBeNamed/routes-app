@@ -101,7 +101,7 @@ values
     ((select id from route_session where user_id = 'user10'), (select id from route_coordinate where route_id = (select id from route where user_id = 'user10') limit 1), now()),
     ((select id from route_session where user_id = 'user10'), (select id from route_coordinate where route_id = (select id from route where user_id = 'user10') limit 1 offset 1), now());
 
-insert into review (used_id, route_id, mark, review_text)
+insert into review (user_id, route_id, mark, review_text)
 values
     ('user1', (select id from route where route_name = 'route1'), 5, 'Great route!'),
     ('user2', (select id from route where route_name = 'route2'), 4, 'Nice route!'),
