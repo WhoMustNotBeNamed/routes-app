@@ -22,10 +22,10 @@ interface RouteRepository : CrudRepository<Route, String> {
         """
             select * 
             from route 
-            where route_id in (
+            where id in (
                 select route_id 
                 from route_category 
-                where category = :category
+                where category_name = :category
             )
         """
     )
